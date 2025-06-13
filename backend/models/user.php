@@ -4,7 +4,7 @@
 
         private $db;
         private $minPasswordLength = 6;
-        private $logFile = __DIR__ . '/../logs/user_errors.log';
+        private $logFile = __DIR__ . '/../../logs/user_errors.log';
 
         public function __construct(){
             $database = new Database();
@@ -60,7 +60,7 @@
                 $stmt->bindParam(':email', $email);
                 $stmt->execute();
                 if ($stmt->rowCount() > 0) {
-                    $this->logError("Enail already registered in checkEmail()");
+                    $this->logError("Email already registered in checkEmail()");
                     return ['success' => false, 'message' => 'Email already registered'];
                 }
                 return null;
