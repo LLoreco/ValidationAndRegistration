@@ -33,7 +33,8 @@
 
             $hashedPassword = $this->hashPassword($password);
             try{
-                if ($this->insertUser($username, $email, $hashedPassword)){
+                $result = $this->insertUser($username, $email, $hashedPassword);
+                if ($result){
                     return ['success' => true, 'message' => 'Registration successful'];
                 }
                 else{
@@ -51,7 +52,7 @@
                 $this->logError("Empty fields in login");
                 return ['success' => false, 'message' => 'You have empty fields'];
             }
-            $this->fetchUser($email, $password);
+            return $this->fetchUser($email, $password);
         }
         private function checkEmail($email){
             try{
@@ -82,6 +83,7 @@
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
                 $stmt->execute();
+                return true;
             } catch(PDOException $e){
                 $this->logError("Database error stroke 86");
                 return false;

@@ -2,29 +2,29 @@
 const Model = {
     async registerUser(data) {
         try {
-            const response = await fetch('/api/register', {
+            const response = await fetch('http://localhost:3000/backend/public/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
             return await response.json();
         } catch (error) {
-            console.error('Registration error:', error);
-            return { success: false, message: 'Network error' };
+            console.error('Ошибка регистрации:', error);
+            return { success: false, message: 'Ошибка сети' };
         }
     },
 
     async loginUser(data) {
         try {
-            const response = await fetch('/api/login', {
+            const response = await fetch('http://localhost:3000/backend/public/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
             return await response.json();
         } catch (error) {
-            console.error('Login error:', error);
-            return { success: false, message: 'Network error' };
+            console.error('Ошибка входа:', error);
+            return { success: false, message: 'Ошибка сети' };
         }
     }
 };

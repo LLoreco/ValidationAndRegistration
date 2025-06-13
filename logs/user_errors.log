@@ -8,3 +8,12 @@
 [2025-06-13 07:57:45] Empty fields in registration
 [2025-06-13 07:57:45] Incorrect email in registration
 [2025-06-13 07:57:45] Password is too short in registration
+[2025-06-13 09:24:16] Registration failed stroke 40
+[2025-06-13 09:24:21] Email already registered in checkEmail()
+[2025-06-13 09:24:22] Email already registered in checkEmail()
+[2025-06-13 09:24:23] Email already registered in checkEmail()
+[2025-06-13 09:24:23] Email already registered in checkEmail()
+[2025-06-13 09:24:23] Email already registered in checkEmail()
+[2025-06-13 09:24:24] Email already registered in checkEmail()
+[2025-06-13 09:25:12] Registration failed stroke 40
+[2025-06-13 09:28:48] Password is too short in registration
